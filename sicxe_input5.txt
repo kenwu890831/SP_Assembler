@@ -1,0 +1,25 @@
+SIXCE   START   3000
+        BASE    SIXCE
+A1      RESW    10
+VAR1    EQU     *
+A2      RESB    20
+A3      RESB    30
+L1      SHIFTR  L,5
+        SVC     3
+        STB     VAR1
+        TIXR    T
+        +STF    VAR2
+        BASE    LTBASE
+        WD      =C'WORD'
+        BASE    SIXCE
+        TIO
+A4      RESB    2048
+        STT     VAR1
+        SSK     @A1
+VAR2    EQU     A4
+        MULF    =X'A7'
+        +SUBF   =X'C9'
+LTBASE  EQU     *
+        +TD     #52535
+        STSW    VAR1,X
+        END

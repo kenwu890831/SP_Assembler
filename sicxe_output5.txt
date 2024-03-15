@@ -1,0 +1,30 @@
+Line    Loc     Source statement              Object code
+
+  1     3000    SIXCE   START   3000
+  2     3000            BASE    SIXCE
+  3     3000    A1      RESW    10
+  4     301E    VAR1    EQU     *
+  5     301E    A2      RESB    20
+  6     3032    A3      RESB    30
+  7     3050    L1      SHIFTR  L,5           A824
+  8     3052            SVC     3             B030
+  9     3054            STB     VAR1          7B2FC7
+ 10     3057            TIXR    T             B850
+ 11     3059            +STF    VAR2          83103061
+ 12     305D            BASE    LTBASE
+ 13     305D            WD      =C'WORD'      DF4007
+ 14     3060            BASE    SIXCE
+ 15     3060            TIO                   F8
+ 16     3061    A4      RESB    2048
+ 17     3861            STT     VAR1          87401E
+ 18     3864            SSK     @A1           EE4000
+ 19     3061    VAR2    EQU     A4
+ 20     3867            MULF    =X'A7'        63200F
+ 21     386A            +SUBF   =X'C9'        5F10387A
+ 22     386E    LTBASE  EQU     *
+ 23     386E            +TD     #52535        E110CD37
+ 24     3872            STSW    VAR1,X        EBC01E
+ 25                     END
+        3875    *       =C'WORD'              574F5244
+        3879    *       =X'A7'                A7
+        387A    *       =X'C9'                C9
